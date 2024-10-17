@@ -17,8 +17,9 @@ const LoginComponent = () => {
         'Content-Type': 'application/x-www-form-urlencoded',
       };
 
+      // Cambiamos la URL del POST para que apunte al endpoint correcto
       const response = await axios.post(
-        '/login',
+        'https://ws.gmys.com.co/login', // <-- Aquí apuntamos a la URL correcta
         qs.stringify({
           usuario: username,
           passwd: password,
@@ -27,6 +28,7 @@ const LoginComponent = () => {
       );
 
       if (response.data.mensaje.estado === 'OK') {
+        // Guardamos el ID del usuario en localStorage
         localStorage.setItem('usuario_id', response.data.mensaje.usuario_id);
         navigate('/dashboard'); // Redirigir al Dashboard
       } else {
