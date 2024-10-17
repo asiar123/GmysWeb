@@ -43,7 +43,7 @@ const LoginComponent = () => {
       <h2>Iniciar sesión</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Usuario:</label>
+          <label>Usuario1:</label>
           <input
             type="text"
             value={username}
