@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
+      '/login': {
         target: 'https://ws.gmys.com.co',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/login/, '/login'), // Esto reenvía la solicitud correctamente
       },
     },
   },

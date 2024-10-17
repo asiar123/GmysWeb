@@ -19,13 +19,14 @@ const LoginComponent = () => {
 
       // Cambiamos la URL del POST para que apunte al endpoint correcto
       const response = await axios.post(
-        'https://ws.gmys.com.co/login', // <-- Aquí apuntamos a la URL correcta
+        '/login', // Aquí haces la solicitud directamente a '/login'
         qs.stringify({
           usuario: username,
           passwd: password,
         }),
         { headers }
       );
+      
 
       if (response.data.mensaje.estado === 'OK') {
         // Guardamos el ID del usuario en localStorage
@@ -45,7 +46,7 @@ const LoginComponent = () => {
       <h2>Iniciar sesión</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Usuario:</label>
+          <label>Usuario2:</label>
           <input
             type="text"
             value={username}
