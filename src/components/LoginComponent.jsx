@@ -17,15 +17,14 @@ const LoginComponent = () => {
         'Content-Type': 'application/x-www-form-urlencoded',
       };
 
-      // Cambiamos la URL del POST para que apunte al endpoint correcto
       const response = await axios.post(
-        '/login', // Aquí haces la solicitud directamente a '/login'
+        'https://ws.gmys.com.co/login', // Aquí debes usar la URL del backend
         qs.stringify({
           usuario: username,
           passwd: password,
         }),
         { headers }
-      );
+      );      
       
 
       if (response.data.mensaje.estado === 'OK') {
