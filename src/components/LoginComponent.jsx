@@ -18,13 +18,14 @@ const LoginComponent = () => {
       };
 
       const response = await axios.post(
-        'https://ws.gmys.com.co/login', // Aquí debes usar la URL del backend
+        'https://cors-anywhere.herokuapp.com/https://ws.gmys.com.co/login', // Proxy CORS-Anywhere
         qs.stringify({
           usuario: username,
           passwd: password,
         }),
         { headers }
-      );      
+      );
+          
       
 
       if (response.data.mensaje.estado === 'OK') {
@@ -45,7 +46,7 @@ const LoginComponent = () => {
       <h2>Iniciar sesión</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Usuario2:</label>
+          <label>Usuario3:</label>
           <input
             type="text"
             value={username}
