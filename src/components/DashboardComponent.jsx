@@ -14,7 +14,7 @@ const DashboardComponent = () => {
   useEffect(() => {
     const fetchVehiculos = async () => {
       try {
-        const response = await axios.get(`/api/vehiculos_user?usuario_id=${usuarioId}`);
+        const response = await axios.get(`https://proxy-gmys.onrender.com/api/vehiculos_user?usuario_id=${usuarioId}`);
         setVehiculos(response.data);
       } catch (error) {
         console.error("Error fetching vehicles:", error);
