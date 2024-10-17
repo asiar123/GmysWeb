@@ -18,7 +18,7 @@ const LoginComponent = () => {
       };
 
       const response = await axios.post(
-        '/api/login',
+        '/login',
         qs.stringify({
           usuario: username,
           passwd: password,
