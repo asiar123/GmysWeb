@@ -17,19 +17,17 @@ const LoginComponent = () => {
         'Content-Type': 'application/x-www-form-urlencoded',
       };
 
+      // Usamos el proxy CORS-Anywhere para evitar problemas de CORS
       const response = await axios.post(
-        'https://cors-anywhere.herokuapp.com/https://ws.gmys.com.co/login', // Proxy CORS-Anywhere
+        'https://cors-anywhere.herokuapp.com/https://ws.gmys.com.co/login', // Cambiamos la URL usando el proxy CORS-Anywhere
         qs.stringify({
           usuario: username,
           passwd: password,
         }),
         { headers }
       );
-          
-      
 
       if (response.data.mensaje.estado === 'OK') {
-        // Guardamos el ID del usuario en localStorage
         localStorage.setItem('usuario_id', response.data.mensaje.usuario_id);
         navigate('/dashboard'); // Redirigir al Dashboard
       } else {
@@ -46,7 +44,7 @@ const LoginComponent = () => {
       <h2>Iniciar sesión</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Usuario3:</label>
+          <label>Usuario2:</label>
           <input
             type="text"
             value={username}
