@@ -41,7 +41,7 @@ const VehiculoDetailComponent = () => {
   useEffect(() => {
     const fetchRecorrido = async () => {
       try {
-        const response = await axios.get(`/api/vehiculo_recorrido?vehi_id=${vehiId}&fecha_i=2024-10-16&fecha_f=2024-10-16`);
+        const response = await axios.get(`https://proxy-gmys.onrender.com/vehiculo_recorrido?vehi_id=${vehiId}&fecha_i=2024-10-16&fecha_f=2024-10-16`);
         const data = response.data;
 
         const puntosValidos = data.filter(punto => punto.velocidad > 0);
