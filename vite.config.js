@@ -15,15 +15,15 @@ export default defineConfig({
         display: 'standalone',
         icons: [
           {
-            src: 'icon-192x192.png',  // Debes tener estos íconos en la carpeta public
+            src: '/assets/icon-192x192.png',  // Usa la ruta completa relativa desde el raíz del proyecto
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'icon-512x512.png',
+            src: '/assets/icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-          },
+          },          
         ],
       },
       registerType: 'autoUpdate', // Actualiza automáticamente cuando haya cambios en el Service Worker
